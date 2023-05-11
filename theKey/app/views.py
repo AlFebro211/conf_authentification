@@ -39,5 +39,8 @@ def login (request):
     return render(request,'login.html')
     
 
-def logout (request):
-    pass
+def logOut(request):
+    logout(request)
+    ms.success(request,'vous avez ete connetcte')
+    return redirect('home')
+        

@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block content %} 
-    <h4> se connecter ici </h4>
-
+    <h2> se connecter ici </h2>
     {% for message in messages %}
-    <strong> {{ messages }} </strong>
+    <strong> {{ message }} </strong>
     {% endfor %}
 
     <form action="POST" action = "../login/">
-        {% csrf_token  %}
+        {% csrf_token %}
         <label for="username"> username</label>
         <input type="text" name="username" id="username" placeholder="Entrer your username" required>
         <br>
