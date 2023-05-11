@@ -8,9 +8,8 @@
  {% endfor %}
  <h4>S'enregister icii</h4>
 
-    <form action="POST" action = "../registrer">
+    <form action="POST" action = "registrer/">
         {% csrf_token  %}
-
         <label for="username"> username</label>
         <input type="text" name="username" id="username" placeholder="Entrer your username" required>
         <br><br>
@@ -30,7 +29,6 @@
         <input type="password" name="confirm password" id="confirm password" placeholder="Entrer your confirm password" required>
         <br><br>
         <button type="submit"> enregistrer  </button>
-
         <br><br>
     </form>
 

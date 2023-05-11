@@ -16,7 +16,7 @@ def registrer (request):
         email = request.POST ['email']
         password = request.POST ['password']
         confirm_motpass = request.POST ['confirm password']
-        mon_utilisateur = User.objects.create_user(username,email,password)
+        mon_utilisateur = User.objects.create(username,email,password)
         mon_utilisateur.first_name = firstname
         mon_utilisateur.last_name = lastname 
         mon_utilisateur.save()
