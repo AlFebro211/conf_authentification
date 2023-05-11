@@ -13,7 +13,7 @@ def registrer (request):
         username = request.POST ['username']
         firstname = request.POST ['firstname']
         lastname = request.POST ['lastname']
-        email = request.POST ['lastnamE']
+        email = request.POST ['email']
         password = request.POST ['password']
         confirm_motpass = request.POST ['confirm password']
         mon_utilisateur = User.objects.create_user(username,email,password)
