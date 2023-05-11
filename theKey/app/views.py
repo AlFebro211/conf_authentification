@@ -36,7 +36,7 @@ def login (request):
         else:
             ms.error(request,'Mauvaise authentification ')
             return redirect ('login')
-    return render(request,'index.html')
+    return render(request,'login.html')
     
 
 def logout (request):
