@@ -24,14 +24,14 @@ def registrer (request):
         return redirect ('login')        
     return render(request,'register.html')
 
-def login (request):
+def logIn (request):
     if request.method == "POST":
         username = request.POST ['username']
         password = request.POST ['password']
         user = authenticate(username=username, password = password)
         if user is not None:
             login(request,user)
-            firstname = user.firstname
+            firstname = user.first_name
             return render(request,'login.html', {'firstname':firstname})
         else:
             ms.error(request,'Mauvaise authentification ')
@@ -41,6 +41,6 @@ def login (request):
 
 def logOut(request):
     logout(request)
-    ms.success(request,'vous avez ete connetcte')
+    ms.success(request,'vous avez ete connecté')
     return redirect('home')
         
