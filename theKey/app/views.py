@@ -32,11 +32,12 @@ def logIn (request):
         if user is not None:
             login(request,user)
             firstname = user.first_name
-            return render(request,'login.html', {'firstname':firstname})
+            ms.success (request,'felicitation!! vous avez ete connecte')
+            return render(request,'index.html',{'firstname':firstname})
         else:
             ms.error(request,'Mauvaise authentification ')
             return redirect ('login')
-    return render(request,'login.html')
+    return render(request,'registrer.html')
     
 
 def logOut(request):
