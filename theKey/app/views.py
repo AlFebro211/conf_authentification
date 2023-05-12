@@ -16,6 +16,19 @@ def registrer (request):
         email = request.POST ['email']
         password = request.POST ['password']
         confirm_motpass = request.POST ['confirm password']
+        if User.objects.filter(username=username):
+            ms.error(request,"ce nom a ete deja utilise")
+            return redirect('registrer')
+        
+        if User.objects.filter(email=email):
+            ms.error(request,'cet email a deja un compte')
+            
+        if not username.isalnum():
+            ms.error(request,'le nom doit etre un alphanumeric')
+            return redirect('registrer')
+        if password != confirm_motpass:
+            ms.error(request,'les deux mots de pass ne coincide pas')
+            return redirect('registrer')
         mon_utilisateur = User.objects.create_user(username,email,password)
         mon_utilisateur.first_name = firstname
         mon_utilisateur.last_name = lastname 
