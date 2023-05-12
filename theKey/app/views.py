@@ -34,6 +34,7 @@ def registrer (request):
         mon_utilisateur.last_name = lastname 
         mon_utilisateur.save()
         ms.success(request, 'votre compte a ete cree avec succes ')
+        
         return redirect ('login')        
     return render(request,'register.html')
 
