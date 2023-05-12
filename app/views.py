@@ -38,7 +38,7 @@ def registrer (request):
         ms.success(request, 'votre compte a ete cree avec succes ')
         subject = 'bienvenu sur Febrox django system login'
         message = 'bienvenue'+mon_utilisateur.first_name + "  " + mon_utilisateur.last_name + "\n Nous sommes heureux de vous recevoir\n\n\n merci\n\n FEBROX PRO"
-        from_email = settings.EMAIL_HSOT_USER
+        from_email = settings.EMAIL_HOST_USER
         to_list = [mon_utilisateur.email]
         send_mail(subject,message,from_email, to_list,fail_silently=False)
         return redirect ('login')        
