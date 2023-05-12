@@ -1,10 +1,8 @@
-from theKey import settings
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages as ms
 from django.contrib.auth import authenticate,login,logout
-from django.core.mail import send_mail
 
 def home  (request):
    return render (request, 'index.html')
@@ -36,11 +34,7 @@ def registrer (request):
         mon_utilisateur.last_name = lastname 
         mon_utilisateur.save()
         ms.success(request, 'votre compte a ete cree avec succes ')
-        subject = 'bienvenu sur Febrox django system login'
-        message = 'bienvenue'+mon_utilisateur.first_name + "  " + mon_utilisateur.last_name + "\n Nous sommes heureux de vous recevoir\n\n\n merci\n\n FEBROX PRO"
-        from_email = settings.EMAIL_HSOT_USER
-        to_list = [mon_utilisateur.email]
-        send_mail(subject,message,from_email, to_list,fail_silently=False)
+        
         return redirect ('login')        
     return render(request,'register.html')
 
