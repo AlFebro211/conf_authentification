@@ -5,7 +5,3 @@ EMAIL_HOST_PASSWORD = '0390511923'
 EMAIL_PORT=587
 
 
-
-# --------------------------------verification
-# --------veriiiiifoopppppp
-# ------veridfoooaaa;;;x
